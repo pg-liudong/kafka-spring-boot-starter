@@ -26,22 +26,13 @@ QQ：908942659 ； wechat：xin2014555
 
 # Install
 
-- **Online installation:**
-
-    IDEA --> Setting --> Plugins --> Search 'Mybatis Log Plus'
-    
-    <a href="https://github.com/pg-liudong/mybatis-log-plus-usage">
-        <img alt="Mybatis-Log-Plus-Search" src="https://raw.githubusercontent.com/pg-liudong/pic-bed/main/202201212305520.png">
-    </a>
-
-- **Manual installation:**
-
-    Since the source code of IntelliJ project was migrated to jdk11 in September 2020, there is ide 2020 based on IntelliJ Version 3 and above will require jdk11 to start.           Therefore, two versions have been developed, and the applicable idea versions are as follows:
-
-    |version              |IntelliJ IDEA version|
-    |:--------------------------:|:--------------------------------|
-    | [mybatis-log-plus-2.0.0.zip](https://github.com/pg-liudong/mybatis-log-plus-usage/raw/main/mybatis-log-plus-2.0.0.zip)|IDEA 2020.2 ~ IDEA 2021.3|
-    | [mybatis-log-plus-1.0.0.zip](https://github.com/pg-liudong/mybatis-log-plus-usage/raw/main/mybatis-log-plus-1.0.0.zip)| IDEA 2017.2 ~ IDEA 2020.2|
+``` xml
+<dependency>
+  <groupId>org.dong.kafka</groupId>
+  <artifactId>kafka-spring-boot-starter</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+</dependency>
+```
   
 # Features
 
