@@ -37,15 +37,9 @@ QQ：908942659 ； wechat：xin2014555
 # Features
 
 
-- **Filter switch**：It can be started or stopped as needed.
+- **Support native**：Support spring-kafka native configuration.
 
-- **Custom rules**：You can customize the rules for capturing SQL.
-
-- **SQL formatting**：You can choose whether to format SQL as needed.
-
-- **Custom color**：You can customize the colors of different SQL statement types as needed.
-
-- **Manually capture SQL**：Select the console SQL log and right-click the capture SQL menu to recover SQL.
+- **Support multiple data sources**：Support multi data source configuration.
 
 # Demo
 
