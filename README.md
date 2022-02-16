@@ -20,7 +20,7 @@
 
 # Intro
 
-kafka-spring-boot-starter is encapsulated based on spring-kafka. In addition to supporting native configuration, it also adds multi data source configuration.
+Kafka-spring-boot-starter is encapsulated based on spring-kafka. In addition to supporting native configuration, it also adds multi data source configuration.
 
 QQ：908942659 ； wechat：xin2014555
 
@@ -55,7 +55,7 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
 ```
-2. multiple data sources configuration (The smaller the configuration granularity, the higher the priority.)
+2. Multiple data sources configuration (The smaller the configuration granularity, the higher the priority.)
 ``` xml
 spring:
   kafka:
