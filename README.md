@@ -94,3 +94,10 @@ If you think the plug-in is great and saves you a lot of time, invite the author
 | ![微信](https://gitee.com/pg-liudong/pic-bed/raw/master/wechat.jpg) | ![支付宝](https://gitee.com/pg-liudong/pic-bed/raw/master/AliPay.jpg) |[![Paypal](https://raw.githubusercontent.com/pg-liudong/pic-bed/main/202202101456821.png)](https://paypal.me/3228389063) |
 | --- | --- | --- |
 
+# WeChat official account
+
+Irregularly share the dry notes of programming technology, not limited to algorithms, databases, spring boot, microservices, high concurrency, JVM, docker, elk, programming skills and other related knowledge. We look forward to making progress with you!
+
+| ![微信公众号](https://gitee.com/pg-liudong/pic-bed/raw/master/微信公众号.png) |
+| --- |
+
