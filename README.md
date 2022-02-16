@@ -42,10 +42,51 @@ QQ：908942659 ； wechat：xin2014555
 - **Support multiple data sources**：Support multi data source configuration.
 
 # Demo
-
-<a href="https://github.com/pg-liudong/mybatis-log-plus-usage">
-   <img alt="Mybatis-Log-Plus-Logo" src="https://raw.githubusercontent.com/pg-liudong/pic-bed/main/202201142233788.jpg">
-</a>
+1. Spring-kafka native configuration
+``` xml
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      auto-offset-reset: earliest
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+```
+2. multiple data sources configuration (The smaller the configuration granularity, the higher the priority.)
+``` xml
+spring:
+  kafka:
+    multiple:
+      # Primary data source is not allowed to be empty.
+      primary: ds1  
+      consumer:
+        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        auto-offset-reset: latest
+      producer:
+        key-serializer: org.apache.kafka.common.serialization.StringSerializer
+        value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      datasource:
+        ds1:
+          bootstrap-servers: localhost:9092
+          consumer:
+            # Consumer concurrent kafka listener container factory is not allowed to be empty.
+            concurrent-kafka-listener-container-factory: ds1KafkaListenerContainerFactory  
+            auto-offset-reset: earliest
+          producer:
+            kafka-template: ds1KafkaTemplate
+        ds2:
+          bootstrap-servers: localhost:9092
+          consumer:
+            concurrent-kafka-listener-container-factory: ds2KafkaListenerContainerFactory
+            auto-offset-reset: earliest
+          producer:
+            # Producer kafka template bean name is not allowed to be empty.
+            kafka-template: ds2KafkaTemplate 
+```
 
 # Donate
 
