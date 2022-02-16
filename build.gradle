@@ -1,0 +1,79 @@
+// 插件配置
+plugins {
+    id 'java-library'
+    id 'idea'
+    id 'maven-publish'
+}
+
+group 'org.dong.kafka'
+version '1.0.0-SNAPSHOT'
+
+//jdk版本
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+dependencies {
+    api('org.springframework.kafka:spring-kafka:2.8.2')
+    implementation(
+            'org.springframework.boot:spring-boot-starter-web:2.6.3',
+            'com.alibaba:fastjson:1.2.79',
+            'cn.hutool:hutool-all:5.7.20',
+            'org.apache.commons:commons-lang3:3.12.0',
+            'com.google.guava:guava:31.0.1-jre'
+    )
+    annotationProcessor(
+            "org.springframework.boot:spring-boot-configuration-processor:2.6.3",
+            'org.projectlombok:lombok:1.18.22',
+    )
+    compileOnly('org.projectlombok:lombok:1.18.22')
+    testImplementation('org.junit.jupiter:junit-jupiter-api:5.8.2')
+    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.8.2')
+}
+
+// 编码方式
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+jar {
+    enabled = true
+    archiveClassifier = ''
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+            pom {
+                name = 'kafka-spring-boot-starter'
+                description = 'Encapsulation based on spring-kafka not only supports native configuration, but also adds multi data source configuration.'
+                url = 'https://github.com/pg-liudong/kafka-spring-boot-starter'
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'liudong'
+                        name = 'liudong'
+                        email = '3228389063@qq.com'
+                    }
+                }
+            }
+        }
+    }
+    repositories {
+        mavenLocal()
+        maven {
+            def releasesRepoUrl = "https://nexus.gaodunwangxiao.com/repository/maven-releases"
+            def snapshotsRepoUrl = "https://nexus.gaodunwangxiao.com/repository/maven-snapshots"
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+            credentials {
+                username = 'crm-nexus'
+                password = 'Crm@2020'
+            }
+        }
+    }
+}
