@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="">
-    <img alt="maven" src="https://img.shields.io/maven-central/v/org.dong.kafka/kafka-spring-boot-starter.svg?style=flat-square">
+    <img alt="maven" src="https://img.shields.io/maven-central/v/io.github.pg-liudong/kafka-spring-boot-starter.svg?style=flat-square">
   </a>
 
   <a href="https://www.apache.org/licenses/LICENSE-2.0">
