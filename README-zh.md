@@ -88,13 +88,13 @@ spring:
             kafka-template: ds2KafkaTemplate 
 ```
 
-# Donate
+# 捐赠 | Donate
 
 如果觉得插件很赞，为你节约了不少时间，那么就请作者喝杯咖啡吧~☕☕☕，非常感谢！您的支持是鼓励我前行的动力，无论金额多少都足够表达您这份心意。
 | ![微信](https://raw.githubusercontent.com/pg-liudong/pic-bed/main/wechat.jpg) | ![支付宝](https://raw.githubusercontent.com/pg-liudong/pic-bed/main/AliPay.jpg) |[![Paypal](https://raw.githubusercontent.com/pg-liudong/pic-bed/main/202202101456821.png)](https://paypal.me/3228389063) |
 | --- | --- | --- |
 
-# WeChat official account
+# 微信公众号 | WeChat official account
 
 不定期分享编程技术干货笔记，不限于算法、数据库、Spring Boot、微服务、高并发、JVM、Docker、ELK、编程技巧等相关知识，期待与您共同进步！
 
