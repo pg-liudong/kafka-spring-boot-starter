@@ -79,7 +79,7 @@ spring:
           producer:
             kafka-template: ds1KafkaTemplate
         ds2:
-          bootstrap-servers: localhost:9092
+          bootstrap-servers: localhost:9093
           consumer:
             container-factory: ds2KafkaListenerContainerFactory
             auto-offset-reset: earliest
