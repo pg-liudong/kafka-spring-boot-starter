@@ -98,6 +98,6 @@ If you think the plug-in is great and saves you a lot of time, invite the author
 
 Irregularly share the dry notes of programming technology, not limited to algorithms, databases, spring boot, microservices, high concurrency, JVM, docker, elk, programming skills and other related knowledge. We look forward to making progress with you!
 
-| ![微信公众号](https://gitee.com/pg-liudong/pic-bed/raw/master/微信公众号.png) |
+| ![微信公众号](https://raw.githubusercontent.com/pg-liudong/pic-bed/main/微信公众号.png) |
 | --- |
 
