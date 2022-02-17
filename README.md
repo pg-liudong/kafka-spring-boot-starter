@@ -28,9 +28,9 @@ QQ：908942659 ； wechat：xin2014555
 
 ``` xml
 <dependency>
-  <groupId>org.dong.kafka</groupId>
+  <groupId>io.github.pg-liudong</groupId>
   <artifactId>kafka-spring-boot-starter</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
 </dependency>
 ```
   
