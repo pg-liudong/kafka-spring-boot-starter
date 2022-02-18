@@ -1,5 +1,5 @@
 <p align="right">
-  <a href="https://github.com/pg-liudong/kafka-spring-boot-starter">
+  <a href="https://github.com/pg-liudong/kafka-spring-boot-starter/blob/main/README-zh.md">
    <img alt="中文" src="https://img.shields.io/badge/-中文-blue">
   </a>
 </p>
