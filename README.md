@@ -43,12 +43,8 @@ QQ：908942659 ； wechat：xin2014555
 # Features
 
 
-- **Support native**：Support spring-kafka native configuration.
+1.  **Support native：** Support spring-kafka native configuration.
 
-- **Support multiple data sources**：Support multi data source configuration.
-
-# Demo
-1. Spring-kafka native configuration
 ``` xml
 spring:
   kafka:
@@ -61,7 +57,9 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
 ```
-2. Multiple data sources configuration (The smaller the configuration granularity, the higher the priority.)
+
+2.  **Support multiple data sources：** Support multi data source configuration.(The smaller the configuration granularity, the higher the priority)
+
 ``` xml
 spring:
   kafka:
@@ -93,6 +91,10 @@ spring:
             # Producer kafka template bean name is not allowed to be empty.
             kafka-template: ds2KafkaTemplate 
 ```
+
+# Demo
+
+- [kafka-spring-boot-starter-demo](https://github.com/pg-liudong/kafka-spring-boot-starter-demo)
 
 # Donate
 
