@@ -1,3 +1,9 @@
+<p align="right">
+  <a href="https://github.com/pg-liudong/kafka-spring-boot-starter">
+   <img alt="中文" src="https://img.shields.io/badge/-中文-blue">
+  </a>
+</p>
+
 <p align="center">
   <a href="https://github.com/pg-liudong/kafka-spring-boot-starter">
    <img alt="Mybatis-Plus-Logo" src="https://raw.githubusercontent.com/pg-liudong/pic-bed/main/202202131718547.svg">
@@ -9,7 +15,7 @@
 </p>
 
 <p align="center">
-  <a href="">
+  <a href="https://mvnrepository.com/artifact/io.github.pg-liudong/kafka-spring-boot-starter">
     <img alt="maven" src="https://img.shields.io/maven-central/v/io.github.pg-liudong/kafka-spring-boot-starter.svg?style=flat-square">
   </a>
 
