@@ -1,3 +1,9 @@
+<p align="right">
+  <a href="https://github.com/pg-liudong/kafka-spring-boot-starter/blob/main/README.md">
+   <img alt="English" src="https://img.shields.io/badge/-English-blue">
+  </a>
+</p>
+
 <p align="center">
   <a href="https://github.com/pg-liudong/kafka-spring-boot-starter">
    <img alt="Mybatis-Plus-Logo" src="https://raw.githubusercontent.com/pg-liudong/pic-bed/main/202202131718547.svg">
