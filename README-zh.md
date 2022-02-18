@@ -45,10 +45,6 @@ QQ：908942659 ； wechat：xin2014555
 
 - **支持原生**：支持spring-kafka原生配置。
 
-- **支持多数据源**：支持多数据源配置。
-
-# 演示 | Demo
-1. spring-kafka 原生配置
 ``` xml
 spring:
   kafka:
@@ -61,7 +57,9 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
 ```
-2. 多数据源配置（配置粒度越小，优先级越高）
+
+- **支持多数据源**：支持多数据源配置。
+
 ``` xml
 spring:
   kafka:
@@ -93,6 +91,11 @@ spring:
             # Producer kafka template bean name is not allowed to be empty.
             kafka-template: ds2KafkaTemplate 
 ```
+
+# 演示 | Demo
+
+- [kafka-spring-boot-starter-demo](https://github.com/pg-liudong/kafka-spring-boot-starter-demo)
+
 
 # 捐赠 | Donate
 
