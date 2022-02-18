@@ -43,7 +43,7 @@ QQ：908942659 ； wechat：xin2014555
 # Features
 
 
-1.  **Support native：** Support spring-kafka native configuration.
+- **Support native：** Support spring-kafka native configuration.
 
 ``` xml
 spring:
@@ -58,7 +58,7 @@ spring:
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
 ```
 
-2.  **Support multiple data sources：** Support multi data source configuration.(The smaller the configuration granularity, the higher the priority)
+- **Support multiple data sources：** Support multi data source configuration.(The smaller the configuration granularity, the higher the priority)
 
 ``` xml
 spring:
