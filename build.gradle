@@ -16,7 +16,7 @@ targetCompatibility = JavaVersion.VERSION_1_8
 dependencies {
     api('org.springframework.kafka:spring-kafka:2.8.2')
     implementation(
-            'org.springframework.boot:spring-boot-starter-web:2.6.3',
+            'org.springframework.boot:spring-boot-starter:2.6.3',
             'com.alibaba:fastjson:1.2.79',
             'cn.hutool:hutool-all:5.7.20',
             'org.apache.commons:commons-lang3:3.12.0',
