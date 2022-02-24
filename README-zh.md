@@ -26,7 +26,7 @@
 
 # 简介 | Intro
 
-Kafka-spring-boot-starter 是基于 spring-kafka 进行封装的。除了支持原生配置外，还增加了多数据源配置。
+Kafka-spring-boot-starter 除了支持原生spring-kafka配置外，还增加了多数据源配置。
 
 QQ：908942659 ； wechat：xin2014555
 
