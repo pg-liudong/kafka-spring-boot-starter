@@ -99,7 +99,7 @@ publishing {
                     developer {
                         id = 'liudong'
                         name = 'liudong'
-                        email = '3228389063@qq.com'
+                        email = 'pg.liudong@qq.com'
                     }
                 }
                 scm {
