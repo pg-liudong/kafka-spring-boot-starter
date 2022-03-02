@@ -58,7 +58,7 @@ spring:
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
 ```
 
-- **支持多数据源**：支持多数据源配置。
+- **支持多数据源**：支持多数据源配置。（配置粒度越小，优先级越高，遵循就近原则）
 
 ``` xml
 spring:
