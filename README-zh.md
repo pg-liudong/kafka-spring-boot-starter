@@ -26,7 +26,7 @@
 
 # 简介 | Intro
 
-Kafka-spring-boot-starter 是基于 spring-kafka 进行封装的。除了支持原生配置外，还增加了多数据源配置。
+Kafka-spring-boot-starter 除了支持原生 spring-kafka 配置外，还增加了多数据源配置。
 
 QQ：908942659 ； wechat：xin2014555
 
@@ -58,7 +58,7 @@ spring:
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
 ```
 
-- **支持多数据源**：支持多数据源配置。
+- **支持多数据源**：支持多数据源配置。（配置粒度越小，优先级越高，遵循就近原则）
 
 ``` xml
 spring:
@@ -99,7 +99,7 @@ spring:
 
 # 捐赠 | Donate
 
-如果觉得插件很赞，为你节约了不少时间，那么就请作者喝杯咖啡吧~☕☕☕，非常感谢！您的支持是鼓励我前行的动力，无论金额多少都足够表达您这份心意。
+如果觉得插件很赞，为你节约了不少时间，那么就请作者喝杯咖啡吧~☕☕☕，非常感谢！
 | ![微信](https://raw.githubusercontent.com/pg-liudong/pic-bed/main/wechat.jpg) | ![支付宝](https://raw.githubusercontent.com/pg-liudong/pic-bed/main/AliPay.jpg) |[![Paypal](https://raw.githubusercontent.com/pg-liudong/pic-bed/main/202202101456821.png)](https://paypal.me/3228389063) |
 | --- | --- | --- |
 
