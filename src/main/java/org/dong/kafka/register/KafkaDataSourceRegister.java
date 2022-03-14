@@ -2,7 +2,6 @@ package org.dong.kafka.register;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.bean.copier.CopyOptions;
-import cn.hutool.core.text.StrFormatter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -102,8 +101,10 @@ public class KafkaDataSourceRegister implements InitializingBean {
                 Assert.isTrue(StringUtils.isNotBlank(datasource.getProducer().getKafkaTemplate()), "kafka-template is null not allowed.");
                 DefaultKafkaProducerFactory<Object, Object> producerFactory = new DefaultKafkaProducerFactory<>(producerConfig(datasource.getProducer()));
                 KafkaTemplate<Object, Object> kafkaTemplate = new KafkaTemplate<>(producerFactory);
-                beanFactory.registerSingleton(datasource.getProducer().getKafkaTemplate(), kafkaTemplate);
-                log.info("kafka-multiple-datasource => add a kafka template named [{}] success.", datasource.getProducer().getKafkaTemplate());
+                if (ObjectUtils.isEmpty(beanFactory.getSingleton(datasource.getProducer().getKafkaTemplate()))) {
+                    beanFactory.registerSingleton(datasource.getProducer().getKafkaTemplate(), kafkaTemplate);
+                    log.info("kafka-multiple-datasource => add a kafka template named [{}] success.", datasource.getProducer().getKafkaTemplate());
+                }
             }
             if (ObjectUtils.isNotEmpty(datasource.getConsumer())) {
                 Assert.isTrue(StringUtils.isNotBlank(datasource.getConsumer().getContainerFactory()), "concurrent-kafka-listener-container-factory is null not allowed.");
@@ -120,11 +121,10 @@ public class KafkaDataSourceRegister implements InitializingBean {
                 if (Objects.equals(kafkaPropertiesWrapper.getPrimary(), datasourceName)) {
                     beanDefinition.setPrimary(true);
                 }
-                String consumerFactoryBeanName = StrFormatter.format("{}{}", datasourceName, "ConsumerFactory");
-                beanFactory.registerBeanDefinition(consumerFactoryBeanName, beanDefinition);
-                beanFactory.registerSingleton(consumerFactoryBeanName, consumerFactory);
-                beanFactory.registerSingleton(datasource.getConsumer().getContainerFactory(), factory);
-                log.info("kafka-multiple-datasource => add a kafka listener container factory named [{}] success.", datasource.getConsumer().getContainerFactory());
+                if (ObjectUtils.isEmpty(beanFactory.getSingleton(datasource.getConsumer().getContainerFactory()))) {
+                    beanFactory.registerSingleton(datasource.getConsumer().getContainerFactory(), factory);
+                    log.info("kafka-multiple-datasource => add a kafka listener container factory named [{}] success.", datasource.getConsumer().getContainerFactory());
+                }
             }
         });
         log.info("kafka-multiple-datasource initial loaded [{}] datasource, primary datasource named [{}]", kafkaPropertiesWrapper.getDatasource().size(), kafkaPropertiesWrapper.getPrimary());
