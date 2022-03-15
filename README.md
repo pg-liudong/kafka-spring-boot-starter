@@ -36,7 +36,7 @@ QQ：908942659 ； wechat：xin2014555
 <dependency>
   <groupId>io.github.pg-liudong</groupId>
   <artifactId>kafka-spring-boot-starter</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 </dependency>
 ```
   
