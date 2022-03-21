@@ -142,6 +142,13 @@ public class KafkaDataSourceRegister implements InitializingBean {
         if (ObjectUtils.isEmpty(datasource)) {
             return propertiesWrapper;
         }
+        Assert.notNull(datasource.getBootstrapServers(), "kafka bootstrap servers cannot be empty.");
+        if (ObjectUtils.isNotEmpty(datasource.getConsumer())) {
+            datasource.getConsumer().setBootstrapServers(datasource.getBootstrapServers());
+        }
+        if (ObjectUtils.isNotEmpty(datasource.getProducer())) {
+            datasource.getProducer().setBootstrapServers(datasource.getBootstrapServers());
+        }
         BeanUtil.copyProperties(datasource.getProducer(), propertiesWrapper.getProducer(), CopyOptions.create().setIgnoreNullValue(true).setIgnoreError(true));
         BeanUtil.copyProperties(datasource.getConsumer(), propertiesWrapper.getConsumer(), CopyOptions.create().setIgnoreNullValue(true).setIgnoreError(true));
         return propertiesWrapper;

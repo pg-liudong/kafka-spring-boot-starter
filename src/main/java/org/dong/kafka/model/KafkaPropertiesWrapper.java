@@ -5,6 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.NestedConfigurationProperty;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -22,6 +23,11 @@ public class KafkaPropertiesWrapper {
      * 主数据源
      */
     private String primary;
+
+    /**
+     * Kafka消费服务器
+     */
+    private List<String> bootstrapServers;
 
     /**
      * 消费者
