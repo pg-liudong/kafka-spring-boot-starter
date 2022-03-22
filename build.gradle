@@ -7,7 +7,7 @@ plugins {
 }
 
 group 'org.dong.kafka'
-version '1.0.2'
+version '1.0.4'
 
 //jdk版本
 sourceCompatibility = JavaVersion.VERSION_1_8
@@ -36,28 +36,21 @@ tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
 }
 
-jar {
-    enabled = true
-    archiveClassifier = ''
+java {
+    withJavadocJar() //生成java-doc
+    withSourcesJar() //生成源码，上传后方便查看
 }
 
-//对于典型的 Java 项目，您可以添加一个javadocJar以及一个 sourcesJar任务
-// 后面的都是打包的配置
-task sourcesJar(type: Jar) {
-    archiveClassifier = 'sources'
-    from sourceSets.main.allJava
-}
-// 生成 javadoc jar
-task javadocJar(type: Jar) {
-    archiveClassifier = 'javadoc'
-    from javadoc.destinationDir
+jar {
+    enabled = true //生成依赖jar包
+    archiveClassifier = '' //取消原来plain的后缀
 }
 
 // javadoc 配置，这里是自定义了 java doc 的一些配置
 javadoc {
     description = "Generates project-level javadoc for use in -javadoc jar"
 
-    options.memberLevel = org.gradle.external.javadoc.JavadocMemberLevel.PROTECTED
+    options.memberLevel = JavadocMemberLevel.PROTECTED
     options.author = true
     options.version = true
     options.header = project.name
@@ -70,10 +63,6 @@ javadoc {
     options.encoding = "UTF-8"  //编码一定要配置否则直接出错
     options.charSet = 'UTF-8'
 }
-// 并将它们与项目 jar 本身一起连接到 artifacts 集合中：
-artifacts {
-    archives javadocJar, sourcesJar
-}
 
 publishing {
     publications {
@@ -82,8 +71,7 @@ publishing {
             artifactId "$project.name"
             version "$version"
             from components.java
-            artifact sourcesJar
-            artifact javadocJar
+
             pom {
                 name = 'kafka-spring-boot-starter'
                 description = 'Encapsulation based on spring-kafka not only supports native configuration, but also adds multi data source configuration.'
@@ -125,11 +113,9 @@ publishing {
 }
 // 将构建的包签名
 signing {
-    sign configurations.archives
     sign publishing.publications.maven
 }
 
 configurations.all {
-    // check for updates every build
     resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
 }
