@@ -2,6 +2,8 @@ package org.dong.kafka;
 
 import org.dong.kafka.model.KafkaPropertiesWrapper;
 import org.dong.kafka.register.KafkaDataSourceRegister;
+import org.dong.kafka.support.KafkaProducerListener;
+import org.dong.kafka.support.KafkaSendMessageHandler;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
@@ -22,7 +24,7 @@ import org.springframework.kafka.annotation.EnableKafka;
 @Configuration(proxyBeanMethods = false)
 @ConditionalOnWebApplication
 @EnableConfigurationProperties(KafkaPropertiesWrapper.class)
-@Import({KafkaDataSourceRegister.class})
+@Import({KafkaDataSourceRegister.class, KafkaProducerListener.class, KafkaSendMessageHandler.class})
 public class KafkaAutoConfiguration implements BeanFactoryAware, SmartInstantiationAwareBeanPostProcessor {
 
     @Override
