@@ -7,7 +7,7 @@ plugins {
 }
 
 group 'org.dong.kafka'
-version '1.0.4'
+version '1.0.5'
 
 //jdk版本
 sourceCompatibility = JavaVersion.VERSION_1_8
