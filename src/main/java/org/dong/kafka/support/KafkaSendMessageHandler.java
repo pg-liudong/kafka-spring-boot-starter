@@ -4,6 +4,7 @@ import cn.hutool.core.lang.Assert;
 import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.ProducerListener;
+import org.springframework.stereotype.Component;
 
 import java.util.concurrent.ExecutionException;
 
@@ -13,6 +14,7 @@ import java.util.concurrent.ExecutionException;
  * @author liudong
  * @date 2022/3/25 9:29
  */
+@Component
 public class KafkaSendMessageHandler<K, V> {
 
     /**
