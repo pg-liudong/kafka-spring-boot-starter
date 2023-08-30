@@ -38,7 +38,7 @@ public class KafkaConsumer {
     /**
      * 标识消费者的消费组
      */
-    private String groupId = "test";
+    private String groupId = "default-group";
 
     /**
      * 心跳与消费者协调的间隔时间

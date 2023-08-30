@@ -17,8 +17,8 @@ dependencies {
     api('org.springframework.kafka:spring-kafka:2.8.2')
     implementation(
             'org.springframework.boot:spring-boot-starter:2.6.3',
-            'com.alibaba:fastjson:1.2.79',
-            'cn.hutool:hutool-all:5.7.20',
+            'com.alibaba:fastjson:1.2.83',
+            'cn.hutool:hutool-all:5.8.16',
             'org.apache.commons:commons-lang3:3.12.0',
             'com.google.guava:guava:31.0.1-jre'
     )
@@ -105,8 +105,8 @@ publishing {
             def snapshotsRepoUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots"
             url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
             credentials {
-                username = "${ossrhUsername}"
-                password = "${ossrhPassword}"
+                username = "${NEXUS_USERNAME}"
+                password = "${NEXUS_PASSWORD}"
             }
         }
     }
